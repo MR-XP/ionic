@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta content="telephone=no" name="format-detection">
-	<title></title>
-    <link rel="stylesheet" href="libs/ionic-1.3.3/css/ionic.min.css?v=1.0">
-    <link rel="stylesheet" href="css/app.css?v=1.0">
-    <script src="libs/jquery-2.1.4.min.js?v=1.0"></script>
-    <script src="libs/ionic-1.3.3/js/ionic.bundle.min.js?v=1.0"></script>
-    <script src="libs/ocLazyLoad.min.js?v=1.0"></script>
-    <script src="js/app.js?v=1.0"></script>
-    <script src="js/filters.js?v=1.0"></script>
-    <script src="js/directives.js?v=1.0"></script>
-    <script src="js/ctrls.js?v=1.0"></script>
-    <script src="js/services.js?v=1.0"></script>
-<!--<script src="libs/wxapi.js"></script>-->
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	    <meta content="telephone=no" name="format-detection">
+		<title></title>
+	    <link rel="stylesheet" href="libs/ionic-1.3.3/css/ionic.min.css">
+	    <link rel="stylesheet" href="css/app.css?v=1.0">
+	    <link rel="stylesheet" href="css/xp.css?v=1.0">
+	    <!--监听横屏-->
+	    <!--<link rel="stylesheet" type="text/css" media="screen and (orientation:landscape)" href="css/look.css">-->
+	    <!--监听竖屏-->
+	    <!--<link rel="stylesheet" type="text/css" media="screen and (orientation: portrait)">-->
+	    <script src="libs/jquery-2.1.4.min.js"></script>
+	    <script src="libs/ionic-1.3.3/js/ionic.bundle.min.js"></script>
+	    <script src="libs/ocLazyLoad.min.js"></script>
+	    <script src="js/app.js?v=1.0"></script>
+	    <script src="js/filters.js?v=1.0"></script>
+	    <script src="js/directives.js?v=1.0"></script>
+	    <script src="js/ctrls.js?v=1.0"></script>
+	    <script src="js/services.js?v=1.0"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	</head>
+	<body ng-app="App">
+		
+		<ion-nav-view animation="slide-left-right"></ion-nav-view>
+		<!-- <div id="look"></div>-->
 
-</head>
-<body ng-app="App">
-	
-	<ion-nav-view animation="slide-left-right"></ion-nav-view>
-	
-	<script type="text/javascript">
+	    <script type="text/javascript">
 
-	
-	//window.wxapi = new wxapi();
+/*	        window.user = {$user};											//用户信息
+	        window.groups = {$groups};										//角色
+	        window.member = {$member};										//you know
+	        window.base_url = {$base_url};									//项目地址
+	        window.static_domain = {$static_domain};						//图片地址*/
 
+			//用户位置
+			window.userLoc={
 	
-	</script>
+				latitude		:	'',		//纬度
+				longitude		:	'',		//经度
+				province		:	'',		//省级
+				city			:	''		//市级
 	
-</body>
+			}
+	
+			//加载SDK
+			$.ajax({
+	            type: "POST",
+	            url: window.base_url + "/index/open/getPackage",
+	            data: {},
+	            dataType: "json",
+	            success: function (data) {
+	
+	                if (data.appid) {
+	                    wx.config({
+	                        debug: false,
+	                        appId: data.appid,
+	                        timestamp: data.timestamp,
+	                        nonceStr: data.noncestr,
+	                        signature: data.signature,
+	                        jsApiList: ['openEnterpriseChat', 'openEnterpriseContact', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice', 'chooseImage', 'previewImage', 'uploadImage', 'downloadImage', 'translateVoice', 'getNetworkType', 'openLocation', 'getLocation', 'hideOptionMenu', 'showOptionMenu', 'hideMenuItems', 'showMenuItems', 'hideAllNonBaseMenuItem', 'showAllNonBaseMenuItem', 'closeWindow', 'scanQRCode']
+	                    })
+	                }
+	
+	            }
+	
+		   });
+	
+	    </script>
+		
+	</body>
 </html>

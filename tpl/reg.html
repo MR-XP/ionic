@@ -1,0 +1,20 @@
+<!--注册-->
+<ion-view class="hx-page" ng-init="setDocumentTitle('用户注册')" hide-nav-bar="true">
+	
+    <ion-content scrollbar-y="false" has-bouncing="true">
+    	
+    	<input type="text" ng-model="user.name" placeholder="姓名" ng-keyup="relEn(user.name)" />
+    	<input type="tel" ng-model="user.phone" maxlength="11" placeholder="手机号" />
+    	<input type="tel" ng-model="user.code" maxlength="6" placeholder="手机验证码" ng-keyup="relCn(user.code)" />
+		<input type="button" class="ipt-code" value="发送手机验证码" ng-click="ck()" />
+		<a href="javascript:;" ng-if="!user.name || !user.phone || !user.code" class="qcyd-btn qcyd-btn-large qcyd-btn-acc" style="opacity: .5;">提交</a>
+		<a href="javascript:;" ng-if="user.name && user.phone && user.code" class="qcyd-btn qcyd-btn-large qcyd-btn-acc" ng-click="save()">提交</a>
+
+    </ion-content>
+
+</ion-view>
+
+
+
+
+
