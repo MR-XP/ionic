@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+/*预设*/
+html {
+  -o-overflow-style: -o-autohiding-scrollbar;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -o-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+html,body,button,input,select,textarea {
+  font-size: 100%;
+  font-family: "微软雅黑";
+}
+
+article,aside,blockquote,body,button,code,dd,details,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul {
+  margin: 0;
+  padding: 0;
+}
+
+body,html {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+img {
+  border: 0;
+  -webkit-border: 0;
+  display: inline-block;
+  -webkit-display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+input,select,textarea {
+  font-size: 100%;
+  display: inline-block;
+  -webkit-display: inline-block;
+  outline: 0;
+}
+
+input:focus,select:focus,textarea:focus {
+  border: 1px solid #735a6f;
+  -webkit-border: 1px solid #735a6f;
+}
+
+button {
+  background: 0 0;
+  border: none;
+  -webkit-border: none;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: inherit;
+}
+
+fieldset,img {
+  border: none;
+  -webkit-border: none;
+}
+
+iframe {
+  display: block;
+  -webkit-display: block;
+}
+
+abbr,acronym {
+  border: none;
+  -webkit-border: none;
+  font-variant: normal;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+i {
+  font-style: normal;
+}
+
+address,caption,cite,code,dfn,em,th,var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+caption,th {
+  text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+q:after,q:before {
+  content: '';
+}
+
+sub,sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a.activated {
+  opacity: 0.6;
+}
+
+a,ins {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 0;
+}

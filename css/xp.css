@@ -1,0 +1,105 @@
+@charset "utf-8";
+/*
+ * HX
+ */
+.c-fe {
+  color: #fefefe !important;
+}
+.c-f {
+  color: #fff !important;
+}
+.c-3 {
+  color: #333 !important;
+}
+.c-48 {
+  color: #484848 !important;
+}
+.c-f0 {
+  color: #f04500 !important;
+}
+.bg-c-f4 {
+  background-color: #f4f4f4 !important;
+}
+.bg-c-f {
+  background-color: #fff !important;
+}
+.bg-c-ff {
+  background-color: #ff7e00 !important;
+}
+.bg-c-e {
+  background-color: #eee !important;
+}
+.bg-c-9 {
+  background-color: #999 !important;
+}
+.bg-c-78 {
+  background-color: #788beb !important;
+}
+.p-rel {
+  position: relative !important;
+}
+.p-abs {
+  position: absolute !important;
+}
+.abs-div-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.db-center {
+  display: block;
+  -webkit-display: block;
+  margin: 0 auto;
+}
+.text-hide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.img-x {
+  width: 100%;
+  height: auto;
+}
+.fl {
+  float: left !important;
+}
+.fr {
+  float: right !important;
+}
+.tc {
+  text-align: center !important;
+}
+.tl {
+  text-align: left !important;
+}
+.tr {
+  text-align: right !important;
+}
+.hx-head,
+.hx-foot {
+  padding: 0;
+}
+.hx-head {
+  height: 80px;
+  overflow: hidden;
+}
+.hx-foot {
+  height: 90px;
+  overflow: hidden;
+}
+.hx-cont {
+  top: 80px;
+  bottom: 90px;
+}
+.hx-cont-noTop {
+  bottom: 90px;
+}
+.hx-cont-noBtm {
+  top: 80px;
+}
+.hx-pd {
+  padding: 20px 30px;
+}
