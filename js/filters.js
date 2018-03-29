@@ -20,7 +20,6 @@ app.filter('allBg', [function () {
     }
 }]);
 
-//月份
 app.filter('zeroFill', [function () {
     return function (input) {
         input = parseInt(input, 10);
@@ -48,6 +47,23 @@ app.filter('cut', [function () {
 	
 	   return value + (tail || ' …');
 	  };
+}]);
+
+//限定文字长度2
+app.filter('cutwo', [function () {
+	return function (value, tail, max) {
+	   
+	   if (!value) return '';
+
+	   max = parseInt(max, 10);
+	   
+	   if (value.length <= max) return value;
+	   if (!max) return value;
+		
+	   value = value.substr(tail, max);
+	
+	   return value
+	}
 }]);
 
 //类别

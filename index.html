@@ -12,9 +12,9 @@
 	    <!--<link rel="stylesheet" type="text/css" media="screen and (orientation:landscape)" href="css/look.css">-->
 	    <!--监听竖屏-->
 	    <!--<link rel="stylesheet" type="text/css" media="screen and (orientation: portrait)">-->
-	    <script src="libs/jquery-2.1.4.min.js"></script>
+	    <script src="libs/jquery/jquery-2.1.4.min.js"></script>
 	    <script src="libs/ionic-1.3.3/js/ionic.bundle.min.js"></script>
-	    <script src="libs/ocLazyLoad.min.js"></script>
+	    <script src="js/plugins/ocLazyLoad.min.js"></script>
 	    <script src="js/app.js?v=1.0"></script>
 	    <script src="js/filters.js?v=1.0"></script>
 	    <script src="js/directives.js?v=1.0"></script>
@@ -44,7 +44,9 @@
 				city			:	''		//市级
 	
 			}
-	
+			
+			var data ={};
+			
 			//加载SDK
 			$.ajax({
 	            type: "POST",
@@ -67,7 +69,26 @@
 	            }
 	
 		   });
-	
+		   
+		   //获取定位
+   	       wx.getLocation({
+	         success: function (res) {						//接口调取成功回调
+	         	window.userLoc.longitude = res.longitude; 
+	         	window.userLoc.latitude  = res.latitude;
+	         },
+	         cancel	:  function () {						//用户点击取消回调
+
+	         },
+	         fail  :  function (){							//接口调取失败回调
+
+	         },
+	         complete	:  function (){						//成功与否都回调
+				a=1;
+				if(cb)
+	         		cb()
+	        }
+		   })
+   	       
 	    </script>
 		
 	</body>

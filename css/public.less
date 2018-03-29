@@ -35,12 +35,12 @@
 }
 
 //字体大小
-.f-s(@px:12px) {
+.f-s(@px:20px) {
     font-size: @px
 }
 
 //字体粗度
-.f-w(@number:700) {
+.f-w(@number:500) {
     font-weight: @number
 }
 
@@ -97,7 +97,7 @@
 }
 
 //字体颜色
-.c(@rgb:#fff){
+.c(@rgb:#000){
     color: @rgb
 }
 
@@ -149,45 +149,49 @@
     -webkit-border-radius: @px
 }
 
+//绝对高度
+.abs(@px:22px){
+    .hg(@px);
+    .l-hg(@px);
+    .f-s(@px)
+}
+
+
 /*
  * HX
  */
 
 //颜色
-.c-fe{
-    .c(#fefefe)!important      
+.c-a4{
+    .c(#a4a4a4)!important
 }
-.c-f{
-    .c(#fff)!important      
+.c-red{
+    .c(#fb514b)!important
+}
+.c-9{
+    .c(#999)!important
 }
 .c-3{
-    .c(#333)!important  
+    .c(#333)!important
 }
-.c-48{
-    .c(#484848)!important          
+.c-f{
+    .c(#fff)!important
 }
-.c-f0{
-    .c(#f04500)!important
+.c-yl{
+    .c(#f28019)!important
 }
-.bg-c-f4{
-    .bg-c(#f4f4f4)!important
+.bg-yl{
+    .bg-c(#f28019)!important
 }
-.bg-c-f{
+.bg-f{
     .bg-c(#fff)!important
 }
-.bg-c-ff{
-    .bg-c(#ff7e00)!important
-}
-.bg-c-e{
-    .bg-c(#eee)!important
-}
-.bg-c-9{
+.bg-9{
     .bg-c(#999)!important
 }
-.bg-c-78{
-    .bg-c(#788beb)!important
+.bg-c2{
+    .bg-c(#c2c2c2)!important
 }
-
 
 //定位
 .p-rel{
@@ -213,7 +217,7 @@
     .mg(0 auto)
 }
 
-//超出部分
+//文字超出部分
 .text-hide{
     .ovr();
     white-space: nowrap;
@@ -246,3 +250,73 @@
 .tr{
     .text(right)!important
 }
+
+//常用动画
+.anime-ease-6{
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+}
+
+.anime-ease-3{
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+//放大动画
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.rotateIn {
+
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -o-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: rotateIn;
+    animation-name: rotateIn;
+
+}
+

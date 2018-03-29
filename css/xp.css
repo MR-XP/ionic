@@ -2,38 +2,35 @@
 /*
  * HX
  */
-.c-fe {
-  color: #fefefe !important;
+.c-a4 {
+  color: #a4a4a4 !important;
 }
-.c-f {
-  color: #fff !important;
+.c-red {
+  color: #fb514b !important;
+}
+.c-9 {
+  color: #999 !important;
 }
 .c-3 {
   color: #333 !important;
 }
-.c-48 {
-  color: #484848 !important;
+.c-f {
+  color: #fff !important;
 }
-.c-f0 {
-  color: #f04500 !important;
+.c-yl {
+  color: #f28019 !important;
 }
-.bg-c-f4 {
-  background-color: #f4f4f4 !important;
+.bg-yl {
+  background-color: #f28019 !important;
 }
-.bg-c-f {
+.bg-f {
   background-color: #fff !important;
 }
-.bg-c-ff {
-  background-color: #ff7e00 !important;
-}
-.bg-c-e {
-  background-color: #eee !important;
-}
-.bg-c-9 {
+.bg-9 {
   background-color: #999 !important;
 }
-.bg-c-78 {
-  background-color: #788beb !important;
+.bg-c2 {
+  background-color: #c2c2c2 !important;
 }
 .p-rel {
   position: relative !important;
@@ -78,28 +75,38 @@
 .tr {
   text-align: right !important;
 }
+.anime-ease-6 {
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+}
+.anime-ease-3 {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.hx-page {
+  background-color: #f8f8f8;
+  font-size: 20px;
+}
 .hx-head,
 .hx-foot {
   padding: 0;
-}
-.hx-head {
-  height: 80px;
   overflow: hidden;
 }
 .hx-foot {
-  height: 90px;
-  overflow: hidden;
+  height: 100px;
+  background-color: #fff;
 }
 .hx-cont {
   top: 80px;
-  bottom: 90px;
+  bottom: 100px;
 }
 .hx-cont-noTop {
-  bottom: 90px;
+  bottom: 100px;
 }
 .hx-cont-noBtm {
   top: 80px;
 }
 .hx-pd {
-  padding: 20px 30px;
+  padding: 0 24px;
+  overflow: hidden;
 }

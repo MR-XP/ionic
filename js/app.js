@@ -4,7 +4,8 @@ window.HX_CONFIG = {
     TEMPLATE_HOST	: 		"",
     STATIC_HOST		: 		"",
     VERSION	   		: 		"",
-    PAGEVERSION		:		"?v=1.0"
+    PAGEVERSION		:		"?v=1.0",
+    DEBUG			:		false
 };
 
 // Ionic Starter App
@@ -47,9 +48,14 @@ angular.module('App', ["ionic", "ngAnimate", "App.ctrls", "oc.lazyLoad", "App.fi
             };
             
             //阻止冒泡
-            $rootScope.stopBubbling = function (e) {
-                e.stopPropagation();
-            };
+            $rootScope.stopBubbling = function (e) {  
+			    e = e || window.event;  
+			    if(e.stopPropagation) { 	//W3C阻止冒泡方法  
+			        e.stopPropagation();  
+			    } else {  
+			        e.cancelBubble = true; 	//IE阻止冒泡方法  
+			    }  
+			}
             
             //title
             $rootScope.setDocumentTitle = function(title) {

@@ -70,15 +70,32 @@ app.service('$local', function () {
     };
 });
 
+app.service('formatDate',[function(){
+	
+	return {
+		
+		get	: function (date){
+			
+			y = date.getFullYear();
+	        m = date.getMonth() + 1;
+	        d = date.getDate();
+			return {y: y, m: m, d: d}
+		}
+		
+	}
+
+}]);
+
 app.service('$popup' , ["$ionicPopup" , function($ionicPopup){
 	return {
 		alert : function(title , subTitle , template){
 			$ionicPopup.alert({
-           	  title    : title, // String. 弹窗的标题。
+           	  title    : title, 	// String. 弹窗的标题。
            	  subTitle : subTitle,
            	  template : template,
-           	  okText   : '确定', // String (默认: 'OK')。OK按钮的文字。
-           	  okType   : 'button-block', // String (默认: 'button-positive')。OK按钮的类型。
+           	  cssClass : '',
+           	  okText   : '确定', 	// String (默认: 'OK')。OK按钮的文字。
+           	  okType   : '', 		// String (默认: 'button-positive')。OK按钮的类型。
            });
 		}
 	}
@@ -92,13 +109,13 @@ app.service('ajaxService', ["$ionicLoading", "$http","$location", function ($ion
 	
 	var methodMap = {
     	
-		Upload             : {url : '/App/Upload/Oss' , method : 'post'},						 //test
+		Upload             : {url :  HX_CONFIG.VERSION+'/App/Upload/Oss' , method : 'post'},				//例子
 
 	};
 	
     var sendAJAX = function (url, method, body, cb) {
         method = method.toLocaleUpperCase();
-        if (HX_CONFIG.debug) {
+        if (HX_CONFIG.DEBUG) {
             console.log("--------------------------------准备发送AJAX----------------------------------");
             console.log("HOST：", HX_CONFIG.HOST);
             console.log("URL：", url);

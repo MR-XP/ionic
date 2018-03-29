@@ -1,28 +1,68 @@
 <!--列表-->
-<ion-view view-title="{{title}}" hide-nav-bar="true" ng-controller="listCtrl">
+<ion-view hide-nav-bar="true" ng-init="setDocumentTitle('首页')" ng-controller="listCtrl">
 
 	<ion-header-bar>
-
+		<div class="nav">
+			<div class="" ng-click="toggleActive(0)"  ng-class="{'gray':active==1}">列表1</div>
+			<div class="" ng-click="toggleActive(1)"  ng-class="{'gray':active==0}">列表2</div>
+			<!--<div class="look"></div>-->
+		</div>
     </ion-header-bar>
 
-    <ion-content overflow-scroll="false" scrollbar-y="false" has-bouncing="true" delegate-handle="mainScroll">
-		<ion-refresher
+	<ion-content class="" overflow-scroll="false" scrollbar-y="false" has-bouncing="false" delegate-handle="mainScroll">
+		
+		<!--列表1-->
+		<div ng-if="active==0">
+			<ion-refresher
                     spinner="ios"
                     pulling-icon="ion-arrow-down-c"
                     pulling-text="下载刷新"
                     refreshing-text="加载中..."
                     on-refresh="doPTRefresh()">
-        </ion-refresher>
-        	
-        <p ng-repeat="i in page.list track by $index">1</p>
+        	</ion-refresher>
+
+        	<div class="" ng-repeat="i in page1.list">
+
+        	</div>
+        		
+	        <ion-infinite-scroll
+	                    ng-if="page1.currPage < page1.totalPage"
+	                    spinner="android"
+	                    distance="1%"
+	                    on-infinite="onPTLoadMore()">
+	        </ion-infinite-scroll>
+	        
+	        <div class="tc c-9 m-t-30" ng-if="page1.list.length==0">列表1没记录</div>
+	        
+		</div>
+		
+		<!--列表2-->
+		<div ng-if="active==1">
+			<ion-refresher
+                    spinner="ios"
+                    pulling-icon="ion-arrow-down-c"
+                    pulling-text="下载刷新"
+                    refreshing-text="加载中..."
+                    on-refresh="doPTRefresh()">
+        	</ion-refresher>
+			
+			<div class="" ng-repeat="i in page2.list">
+
+        	</div>
+        		
+	        <ion-infinite-scroll
+	                    ng-if="page2.currPage < page2.totalPage"
+	                    spinner="android"
+	                    distance="1%"
+	                    on-infinite="onPTLoadMore()">
+	        </ion-infinite-scroll>
+	        
+	        <div class="tc c-9 m-t-30" ng-if="page2.list.length==0">列表2没记录</div>
+		</div>
+		
         
-        <ion-infinite-scroll
-                    ng-if="page.currPage < page.totalPage"
-                    spinner="android"
-                    distance="1%"
-                    on-infinite="onPTLoadMore()">
-        </ion-infinite-scroll>
     </ion-content>
+
 
     <ion-footer-bar align-title="left">
 		
