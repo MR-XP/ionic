@@ -30,27 +30,9 @@ app.filter('zeroFill', [function () {
 
 //限定文字长度
 app.filter('cut', [function () {
-	return function (value, wordwise, max, tail) {
-	   if (!value) return '';
-	
-	   max = parseInt(max, 10);
-	   if (!max) return value;
-	   if (value.length <= max) return value;
-	
-	   value = value.substr(0, max);
-	   if (wordwise) {
-		   var lastspace = value.lastIndexOf(' ');
-		   if (lastspace != -1) {
-			   value = value.substr(0, lastspace);
-		   }
-	   }
-	
-	   return value + (tail || ' …');
-	  };
-}]);
-
-//限定文字长度2
-app.filter('cutwo', [function () {
+	/*	例子
+	 * {{i.start_time | cut:11:5}}
+	 */
 	return function (value, tail, max) {
 	   
 	   if (!value) return '';

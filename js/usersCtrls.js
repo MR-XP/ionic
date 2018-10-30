@@ -2,10 +2,18 @@ var app = angular.module('App', []);
 app.controller("indexCtrl", ["$scope","$ionicLoading","ajaxService","$ionicNavBarDelegate","$ionicActionSheet",
 				   function ($scope,$ionicLoading,ajaxService,$ionicNavBarDelegate,$ionicActionSheet) {
 	
-
+	$scope.load=function(){
+		ajaxService.ajax('',null, function (json) {			
+	        if (json.code==1) {
+				
+	        }	        
+    	})
+	}
+		
 	//页面刚加载			   
 	$scope.$on('$ionicView.beforeEnter',function(){
 		$ionicLoading.show(HX_CONFIG.loadingBase);
+		$scope.load()
 	});
 	
 	//页面加载完成

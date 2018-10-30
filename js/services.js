@@ -108,9 +108,7 @@ app.service('ajaxService', ["$ionicLoading", "$http","$location", function ($ion
     var service = {};
 	
 	var methodMap = {
-    	
-		Upload             : {url :  HX_CONFIG.VERSION+'/App/Upload/Oss' , method : 'post'},				//例子
-
+    	test	: {url :  '/xxx/xxx/xxx' , method : 'post'},		//接口演示
 	};
 	
     var sendAJAX = function (url, method, body, cb) {
@@ -133,10 +131,10 @@ app.service('ajaxService', ["$ionicLoading", "$http","$location", function ($ion
         }
 
         switch (method) {
-            case "GET":
-                var config = {params: body , headers : {X_REQUESTED_WITH : 'xmlhttprequest'}};
+            case "GET":									
+                var config = {params: body , headers : {'X-Requested-With'  : 'xmlhttprequest'}};
                 $http.get(HX_CONFIG.HOST + url, config).success(function (data) {
-                	if(data.errCode == 10000){
+/*                	if(data.errCode == 10000){
                 		$.toast(data.message , 'text');
                 		$location.path('employee_login');
                 		return;
@@ -146,18 +144,17 @@ app.service('ajaxService', ["$ionicLoading", "$http","$location", function ($ion
                 		window._member = {};
                 		$location.path('login');
                 		return;
-                	}
-                    HX_CONFIG.debug && console.log("url=" + url, "成功", "返回结果：", data, "\n");
+                	}*/
+                    HX_CONFIG.DEBUG && console.log("url=" + url, "成功", "返回结果：", data, "\n");
                     cb && cb(data);
                 }).error(function (err) {
-                    HX_CONFIG.debug && console.log("url=" + url, "错误", "返回结果：err = ", err, "\n");
+                    HX_CONFIG.DEBUG && console.log("url=" + url, "错误", "返回结果：err = ", err, "\n");
                     cb && cb({errCode: -9999, message: "访问服务器失败！"});
                 });
                 break;
             case "POST":
-                $http.post(HX_CONFIG.HOST + url, body , {headers : {X_REQUESTED_WITH : 'xmlhttprequest'}}).success(function (data) {
-                    HX_CONFIG.debug && console.log("url = " + url, "成功", "返回结果：", data, "\n");
-                    if(data.errCode == 10000){
+                $http.post(HX_CONFIG.HOST + url, body , {headers : {'X-Requested-With' : 'xmlhttprequest'}}).success(function (data) {
+/*                  if(data.errCode == 10000){
                     	$.toast(data.message , 'text');
                 		$location.path('employee_login');
                 		return;
@@ -166,10 +163,11 @@ app.service('ajaxService', ["$ionicLoading", "$http","$location", function ($ion
                     	$.toast(data.message , 'text');
                 		$location.path('login');
                 		return;
-                	}
+                	}*/
+                	HX_CONFIG.DEBUG && console.log("url = " + url, "成功", "返回结果：", data, "\n");
                     cb && cb(data);
                 }).error(function (err) {
-                    HX_CONFIG.debug && console.log("url = " + url, "错误", "返回结果：err = ", err, "\n");
+                    HX_CONFIG.DEBUG && console.log("url = " + url, "错误", "返回结果：err = ", err, "\n");
                     cb && cb({errCode: -9999, message: "访问服务器失败！"});
                 });
                 break;
@@ -183,7 +181,7 @@ app.service('ajaxService', ["$ionicLoading", "$http","$location", function ($ion
             sendAJAX(mm.url, mm.method, opts, cb);
         } else {
             //未找到方法
-            HX_CONFIG.debug && console.log("url=" + url, "错误", "返回结果：err = ", "无法请求，无效的请求！", "\n");
+            HX_CONFIG.DEBUG && console.log("url=" + url, "错误", "返回结果：err = ", "无法请求，无效的请求！", "\n");
             cb && cb({errCode: -1, message: "无效的请求"})
         }
     };
