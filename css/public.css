@@ -56,6 +56,16 @@
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
 }
+.clean-form {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+/*
+ * @alias 阴影
+ * @description 值：水平，垂直，模糊距离，阴影尺寸，阴影颜色
+ * @example 水平为负数，阴影就在左边，垂直为负数，阴影就在上面
+ */
 /*
  * body
  */
@@ -141,6 +151,9 @@
 }
 .c-28 {
   color: #282828 !important;
+}
+.c-f7 {
+  color: #F7CD5C !important;
 }
 /*
  * size
@@ -307,6 +320,12 @@
 /*
  * 图文列表间距    margin
  */
+.mg-lf-20 {
+  margin-left: 0.2rem !important;
+}
+.mg-rg-20 {
+  margin-right: 0.2rem !important;
+}
 .mg-lf-15 {
   margin-left: 0.15rem !important;
 }
@@ -355,8 +374,26 @@
 /*
  * background
  */
+.bg-cyan {
+  background-color: #43CEA9 !important;
+}
 .bg-f {
   background-color: #fff !important;
+}
+.bg-86 {
+  background-color: rgba(134, 134, 134, 0.09) !important;
+}
+.bg-f6 {
+  background-color: #f6f6f6 !important;
+}
+.bg-f3 {
+  background-color: #f3f3f3 !important;
+}
+.bg-f2 {
+  background-color: #f2f2f2 !important;
+}
+.bg-f4 {
+  background-color: #ff4444 !important;
 }
 /*
  * button
@@ -428,11 +465,14 @@
 /*
  * font weight
  */
+.f-w-500 {
+  font-weight: 500;
+}
 .f-w-bold {
   font-weight: bold;
 }
 .f-w-normal {
-  font-weight: normal;
+  font-weight: normal !important;
 }
 /*
  * height
@@ -473,6 +513,9 @@
 .hg-30 {
   height: 0.3rem !important;
 }
+.hg-40 {
+  height: 0.4rem !important;
+}
 /*
  * line-height
  */
@@ -512,6 +555,9 @@
 .l-hg-30 {
   line-height: 0.3rem !important;
 }
+.l-hg-40 {
+  line-height: 0.4rem !important;
+}
 /*
  * display
  */
@@ -522,6 +568,10 @@
 .d-i-block {
   display: inline-block !important;
   -webkit-display: inline-block !important;
+}
+.d-flex {
+  display: flex !important;
+  -webkit-display: flex !important;
 }
 .close-div {
   position: absolute !important;
@@ -555,21 +605,21 @@
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
-.db-br {
+.br-db {
   border-top: 1px solid #ccc;
   -webkit-border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   -webkit-border-bottom: 1px solid #ccc;
 }
-.btm-br {
+.br-btm {
   border-bottom: 1px solid #ccc;
   -webkit-border-bottom: 1px solid #ccc;
 }
-.top-br {
+.br-top {
   border-top: 1px solid #ccc;
   -webkit-border-top: 1px solid #ccc;
 }
-.not-br {
+.br-not {
   border: none !important;
   -webkit-border: none !important;
 }

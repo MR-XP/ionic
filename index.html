@@ -5,32 +5,33 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	    <meta content="telephone=no" name="format-detection">
 		<title></title>
-		<link rel="shortcut icon" type="image/x-icon" href="{$DEV_STATIC_DOMAIN}/favicon.ico" media="screen"  />
-	    <link rel="stylesheet" href="{$DEV_STATIC_DOMAIN}/libs/ionic-1.3.3/css/ionic.min.css">
-	    <link rel="stylesheet" href="{$DEV_STATIC_DOMAIN}/css/app.css{$APP_VERSION}">
-	    <link rel="stylesheet" href="{$DEV_STATIC_DOMAIN}/css/animate.css{$APP_VERSION}">
-	    <link rel="stylesheet" href="{$DEV_STATIC_DOMAIN}/css/xp.css{$APP_VERSION}">
-	    <link rel="stylesheet" href="//at.alicdn.com/t/font_880294_u54dj2hthej.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen"  />
+	    <link rel="stylesheet" href="libs/ionic-1.3.3/css/ionic.min.css">
+	    <link rel="stylesheet" href="css/app.css">
+	    <link rel="stylesheet" href="css/animate.css">
+	    <link rel="stylesheet" href="css/xp.css">
+	    <link rel="stylesheet" href="//at.alicdn.com/t/font_880294_2zf29o8jn14.css">
 	    <!--监听横屏 兼容性不好，逐渐抛弃-->
 	    <!--<link rel="stylesheet" type="text/css" media="screen and (orientation:landscape)" href="css/look.css">-->
 	    <!--监听竖屏 兼容性不好，逐渐抛弃-->
 	    <!--<link rel="stylesheet" type="text/css" media="screen and (orientation: portrait)">-->
-	    <script src="{$DEV_STATIC_DOMAIN}/libs/jquery/jquery-2.1.4.min.js"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/libs/ionic-1.3.3/js/ionic.bundle.min.js"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/js/plugins/ocLazyLoad.min.js"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/js/app.js{$APP_VERSION}"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/js/filters.js{$APP_VERSION}"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/js/directives.js{$APP_VERSION}"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/js/ctrls.js{$APP_VERSION}"></script>
-	    <script src="{$DEV_STATIC_DOMAIN}/js/services.js{$APP_VERSION}"></script>
-		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	    <script src="libs/jquery/jquery-2.1.4.min.js"></script>
+	    <script src="libs/ionic-1.3.3/js/ionic.bundle.min.js"></script>
+	    <script src="js/plugins/ocLazyLoad.min.js"></script>
+	    <script src="js/app.js"></script>
+	    <script src="js/filters.js"></script>
+	    <script src="js/directives.js"></script>
+	    <script src="js/ctrls.js"></script>
+	    <script src="js/services.js"></script>
+		<script src="js/plugins/wxapi.js"></script>
 		<script type="text/javascript">
 			window.HX_CONFIG = {
 			    loadingBase: {template: '<ion-spinner icon="android" class="spinner spinner-android" style="stroke: #fff"><svg viewBox="0 0 64 64"><g transform="rotate(315.7000000000001,32,32)"><circle stroke-width="6" stroke-dasharray="130.10559854346837" stroke-dashoffset="0.33136094674554784" r="26" cx="32" cy="32" fill="none" transform="scale(1,1) translate(0,0) rotate(-270,32,32)"></circle></g></svg></ion-spinner>'},
-			    HOST			: 		"{$HOST}",
-			    TEMPLATE_HOST	: 		"{$DEV_STATIC_DOMAIN}",
-			    STATIC_HOST		: 		"{$OSS_DOMAIN}",
-			    APP_VERSION		:		"{$APP_VERSION}",
+			    HOST			: 		"",
+			    PUBLIC_HOST		:		"",
+			    TEMPLATE_HOST	: 		"",
+			    STATIC_HOST		: 		"",
+			    APP_VERSION		:		"",
 			    DEBUG			:		false
 			};        	
 			
@@ -100,110 +101,7 @@
         </script>
 	</head>
 	<body ng-controller="AppCtrl">
-		
 		<ion-nav-view animation="slide-left-right"></ion-nav-view>
-		
 		<!--<div id="look"></div>-->
-
-	    <script type="text/javascript">
-
-			//用户位置
-			window.userLoc={
-	
-				latitude		:	'',		//纬度
-				longitude		:	'',		//经度
-				province		:	'',		//省级
-				city			:	''		//市级
-				
-			}
-
-			//加载SDK
-/*			$.ajax({
-	            type: "POST",
-	            url: window.HX_CONFIG.HOST + "/index/open/getPackage",
-	            data: {},
-	            dataType: "json",
-	            success: function (data) {
-	                if (data.appid) {
-	                    wx.config({
-	                        debug: false,
-	                        appId: data.appid,
-	                        timestamp: data.timestamp,
-	                        nonceStr: data.noncestr,
-	                        signature: data.signature,
-	                        jsApiList: [
-	                        'openEnterpriseChat',
-	                        'openEnterpriseContact',
-	                        'onMenuShareTimeline',
-	                        'onMenuShareAppMessage',
-	                        'onMenuShareQQ',
-	                        'onMenuShareWeibo',
-	                        'onMenuShareQZone',
-	                        'startRecord',
-	                        'stopRecord',
-	                        'onVoiceRecordEnd',
-	                        'playVoice',
-	                        'pauseVoice',
-	                        'stopVoice',
-	                        'onVoicePlayEnd',
-	                        'uploadVoice',
-	                        'downloadVoice',
-	                        'chooseImage',
-	                        'previewImage',
-	                        'uploadImage',
-	                        'downloadImage',
-	                        'translateVoice',
-	                        'getNetworkType',
-	                        'openLocation',
-	                        'getLocation',
-	                        'hideOptionMenu',
-	                        'showOptionMenu',
-	                        'hideMenuItems',
-	                        'showMenuItems',
-	                        'hideAllNonBaseMenuItem',
-	                        'showAllNonBaseMenuItem',
-	                        'closeWindow',
-	                        'scanQRCode']
-	                    })
-	                }
-	            }
-		  	});*/
-			
-			//获取定位信息
-/*		    function getLocation(cb) {
-	
-		    	var a=0;
-		        wx.getLocation({
-			         success: function (res) {						//接口调取成功回调
-			         	window.userLoc.longitude = res.longitude; 
-			         	window.userLoc.latitude  = res.latitude;
-			         },
-			         cancel	:  function () {						//用户点击取消回调
-						window.userLoc.longitude = '116.587667'; 
-			         	window.userLoc.latitude  = '40.000549';
-	                 },
-	                 fail  :  function (){							//接口调取失败回调
-						window.userLoc.longitude = '116.587667'; 
-			         	window.userLoc.latitude  = '40.000549';
-	                 },
-	                 complete	:  function (){						//成功与否都回调
-						a=1;
-						if(cb)
-			         		cb()
-	                 }
-		        })
-				
-				//没有回调进行应急处理
-				setTimeout(function(){
-					if(a==0){
-						if(cb)
-			         		cb()
-					}
-				},5000)
-	
-		    }*/
-			
-	    </script>
-		
 	</body>
 </html>

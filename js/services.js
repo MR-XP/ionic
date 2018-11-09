@@ -80,6 +80,12 @@ app.service('formatDate',[function(){
 	        m = date.getMonth() + 1;
 	        d = date.getDate();
 			return {y: y, m: m, d: d}
+		},
+		getString : function(date){
+			y = date.getFullYear();
+	        m = date.getMonth() + 1;
+	        d = date.getDate();
+	        return y+'-'+m+'-'+d
 		}
 		
 	}
@@ -88,14 +94,29 @@ app.service('formatDate',[function(){
 
 app.service('$popup' , ["$ionicPopup" , function($ionicPopup){
 	return {
-		alert : function(title , subTitle , template){
+		alert : function(title, subTitle, template){
 			$ionicPopup.alert({
-           	  title    : title, 	// String. 弹窗的标题。
+           	  title    : title, 	// String 弹窗的标题。
            	  subTitle : subTitle,
            	  template : template,
            	  cssClass : '',
            	  okText   : '确定', 	// String (默认: 'OK')。OK按钮的文字。
            	  okType   : '', 		// String (默认: 'button-positive')。OK按钮的类型。
+           });
+		},
+		confirm	: function(title, template, ok, cancel,okCb,cancelCb){
+			$ionicPopup.confirm({
+           	  title    		: title, 	// String 弹窗的标题。
+           	  template 		: template,	// String 弹窗内容
+           	  okText		: ok,		// String (默认: 'OK')。OK按钮的文字。
+           	  okType   		: '', 		// String (默认: 'button-positive')。OK按钮的类型。
+           	  cancelText	: cancel,
+           	  cancelType	: '', 		// String (默认: 'button-default')。取消按钮的类型。
+           }).then(function(res){
+           		if(res) 
+			        okCb && okCb()
+			     else 
+			        cancelCb && cancelCb()
            });
 		}
 	}

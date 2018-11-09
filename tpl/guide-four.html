@@ -1,0 +1,53 @@
+<!--引导页3-->
+<ion-view ng-init="setDocumentTitle('基本资料');pageName='guide-four'" hide-nav-bar="true">
+	
+	<ion-content class="guide-cont pb-pd" overflow-scroll="false" scrollbar-y="false" has-bouncing="true">
+		<div class="hx-pd">
+			<div class="hg-40 l-hg-40 mg-btm-30 mg-top-20 tc">
+				<span class="f-s-16 hg-16 l-hg-16 c-1a f-w-bold" style="margin-right: -0.4rem;">目标体重</span>
+		 		<a href="javascript:;" class="f-s-12 c-54 hg-40 fr" style="width: 0.4rem;background-color: #F6F6F6;border-radius: 50%;">跳过</a>
+			</div>
+		</div>
+		<div class="f-s-20 hg-20 l-hg-20 f-w-bold c-cyan mg-btm-12 tc font-arial" id="target_weight"></div>
+		<div class="ruler-mode">
+	 		<div class="ruler-drop"></div>
+	 		<div class="ruler-cont">
+	 			<ion-scroll class="ruler-scroll" delegate-handle="target_weight" has-bouncing="true" scrollbar-x="false" direction="x" on-scroll="getPX('target_weight','kg')">
+	 				<div class="ruler-div"></div>
+	 			</ion-scroll>
+	 		</div>
+		</div>
+		<div class="f-s-16 hg-16 l-hg-16 c-1a f-w-bold mg-btm-30 tc" style="margin-top:0.4rem">着重锻炼部位(多选)</div>
+		<div class="guide-tabs anime-ease-3 guide-tabs-hide guide-four" clsname="guide-tabs-show" time="200">
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.xiongbu.type}" ng-click="part.xiongbu.type = !part.xiongbu.type">胸部</div> 
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.beibu.type}" ng-click="part.beibu.type = !part.beibu.type">背部</div> 
+		</div>
+		<div class="guide-tabs anime-ease-3 guide-tabs-hide guide-four" clsname="guide-tabs-show" time="400">
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.shoubi.type}" ng-click="part.shoubi.type = !part.shoubi.type">手臂</div> 
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.jianbu.type}" ng-click="part.jianbu.type = !part.jianbu.type">肩部</div> 
+		</div>
+		<div class="guide-tabs anime-ease-3 guide-tabs-hide guide-four" clsname="guide-tabs-show" time="600">
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.fubu.type}" ng-click="part.fubu.type = !part.fubu.type">腹部</div> 
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.yaobu.type}" ng-click="part.yaobu.type = !part.yaobu.type">腰部</div> 
+		</div>
+		<div class="guide-tabs anime-ease-3 guide-tabs-hide guide-four" clsname="guide-tabs-show" time="800">
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.tunbu.type}" ng-click="part.tunbu.type = !part.tunbu.type">臀部</div> 
+			<div class="qc-btn" ng-class="{'qc-btn-c':part.tuibu.type}" ng-click="part.tuibu.type = !part.tuibu.type">腿部</div> 
+		</div>
+	</ion-content>
+	
+	<ion-footer-bar class="guide-foot">
+		<div class="guide-tab">
+			<a class="guide-tab-prev fl" href="javascript:;" ng-click="back();keep()">上一步</a>
+			<a class="guide-tab-next fl" href="javascript:;" ng-click="next()">下一步</a>
+		</div>
+	</ion-footer-bar>
+	
+	<!--赠送卡-->
+	<div class="bean-mode">
+		<div class="bean-div" ng-click="close()">
+			<img ng-src="{{app.TEMPLATE_HOST}}/img/receive-card.png" />
+		</div>
+	</div>
+	
+</ion-view>

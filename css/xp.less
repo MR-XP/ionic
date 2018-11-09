@@ -1,1 +1,597 @@
 ﻿@import 'public.less';
+
+//日期类
+.date-menu{
+    .br(bottom,1px solid RGBA(151, 151, 151, .4));
+    .p-rel;
+    .hx-pd;
+    white-space:nowrap;
+    .date-menu-li{
+        .dsp(inline-block);
+        .f-s(0.12rem);
+        .tc;
+        .wh(20%);
+        .date-menu-li-txt{
+            .c(#9B9B9B);
+            .hg(0.12rem);
+            .l-hg(0.12rem);
+        }
+        .date-menu-li-num{
+            .c(#323232);
+            .mg(0.06rem 0 0.1rem);
+            .hg(0.12rem);
+            .l-hg(0.12rem);
+        }
+    }
+    .date-menu-active{
+        .p-abs;
+        .wh(0.38rem);
+        .hg(0.02rem);
+        .bg-c(#000);
+        left: 0.15rem;
+        bottom: 0;
+    }
+    .date-menu-li:last-of-type{
+        .mg(right,0.4rem)
+    }
+}
+
+//导航切换
+.tab-nav{
+   .wh(100%);
+   .hg(0.28rem);
+   .ovr();   
+   .tab-nav-li{
+       .fl;
+       .f-s(0.2rem);
+       .hg(0.2rem);
+       .l-hg(0.2rem);
+       .f-w-bold;
+       .c(#000);
+       .mg(left,0.32rem)
+   }
+   .tab-nav-li:nth-of-type(1){
+       .mg(left,0)
+   }
+   .tab-nav-li-choose{
+       .c(#43CEA9);
+   }
+   .tab-nav-look{
+       .wh(0.38rem);
+       .hg(0.02rem);
+       .bg-c(#43CEA9);
+       left: 0.2rem;
+       bottom: 0;
+   }
+}
+
+//底部导航切换
+.foot-nav{
+    .hg(0.5rem);
+    .wh(100%);
+    .dsp(flex);
+    .foot-nav-li{
+        flex: 1;
+        -webkit-flex: 1;
+        .tc;
+        .c(#9E9E9E);        
+    }
+    .foot-nav-icon{
+        .dsp();
+        .f-s(0.2rem);
+        .wh(0.2rem);
+        .hg(0.2rem);
+        .mg(0.08rem auto 0.04rem)
+    }
+    .foot-nav-name{
+        .f-s-10;        
+        .hg(0.1rem);
+        .l-hg(0.1rem);
+    }
+    .foot-nav-active{
+        .c(#43CEA9)!important
+    }
+}
+
+//图片上传
+.up-img{
+    height: 0.7rem;
+    .l-hg(0.7rem);
+    width: 0.7rem;
+    .tc;
+    background-color: #F6F6F6;
+    border:1px solid #D1D1D1;
+    float: left;
+    margin-bottom: 0.15rem;
+    margin-right: 0.15rem;
+    i{
+        .f-s(0.22rem);
+    }
+}
+.show-img{
+    .wh(0.7rem);
+    .hg(0.7rem);
+    .p-rel;
+    .mg(0 0.15rem 0.15rem 0);
+    .br(1px solid #ccc);
+    .fl;
+    i{
+        .p-abs;
+        .f-s(0.22rem);
+        top:-0.11rem;
+        right:-0.11rem;
+        .c(red);
+        z-index: 999;
+    }
+}
+
+//日期切换
+.sign-record{
+    
+    #calendar{
+        .ovr();
+        background:linear-gradient(308deg,rgba(112,218,198,1) 0%,rgba(67,206,169,1) 100%);
+        
+        .title{
+            .hg(0.3rem);
+            .p-rel;
+            .mg(0.28rem 0 0.18rem);
+            .ck-div{
+                .wh(0.6rem);
+                .hg(100%);
+                .p-abs;
+                top: 0;
+                z-index: 9999;
+            }
+            
+            .ck-lf{
+                left: 0;
+            }
+            
+            .ck-rg{
+                right: 0;
+            }
+            
+            .prev,.next{
+                .wh(0.16rem);
+                .hg(0.16rem);
+                .p-abs;
+                bottom: 0.03rem;
+                z-index:999;
+                
+                &:after,&:before{
+                    .p-abs;
+                    content: '';
+                    .wh(100%);
+                    .hg(0.03rem);
+                    .bg-c(#fff);
+                    left: 0;
+                    top: calc(50%);
+                    .br-rs(0.35rem)
+                }
+            }
+            
+            .prev{
+                left: 0.3rem;
+                
+                &:after{
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    top: -0.02rem;
+                }
+                
+                &:before{
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    bottom: -0.02rem;
+                }
+            }
+            
+            .next{
+                right: 0.3rem;
+                
+                &:after{
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    bottom: -0.02rem;
+                }
+                
+                &:before{
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    top: -0.02rem;
+                }
+            }
+            
+            .month-span{
+                .hg(100%);
+                .l-hg(0.3rem);
+                .f-s(0.2rem);
+                .f-w(bold);
+                .c(#fff);
+                .tc;
+                font-family: Arial!important;
+            }
+        }
+        
+        #signLayer{
+          
+          .sign{
+              
+              .sign-tit,.sign-li{
+                  .wh(100%);
+                  .mg(bottom,0.18rem);
+                  min-height: 0.33rem;
+                  .ovr();
+                  
+                  div{
+                      .fl;
+                      .wh(14.2%);
+                      .tc;
+                      .f-s(0.14rem);
+                      .f-w(bold);
+                      .c(#fff)
+                  }   
+              }
+              
+              .sign-li{
+                font-family: Arial!important;
+                  div{
+                      
+                      .hg(0.33rem);
+                      .l-hg(0.33rem);
+                      span{
+                          .dsp(inline-block);
+                          .wh(0.33rem);
+                          .hg(0.33rem);
+                          .br(1px solid #fff);
+                          .br-rs(50%);
+                          .ovr();
+                          .mg(0 auto);
+                      }
+                      .ck-sp{
+                          .bg-c(#fff);
+                          .c(#43CEA9)
+                      }
+                  }
+              }
+            }  
+        }
+    }    
+}
+
+//注册页
+.acc{
+    .acc-tit{
+        .tc;
+        .abs(0.2rem);
+        .c(#000);
+        .mg(0.8rem 0 0.5rem)
+    }
+    //账户内部
+    .acc-pd{
+        .pd(0 0.2rem);
+    }
+    //账户输入类
+    .acc-ipt{
+        .wh(100%);
+        .mg(bottom,0.28rem);
+        .br(bottom,1px solid rgba(0,0,0,.2));
+        
+        .acc-txt{
+            .abs(0.14rem);
+            .c-1a;
+            .mg(bottom,0.2rem);
+        }
+        //输入类
+        input,select{
+            background: none;
+            .br(none);
+            .wh(100%);
+            .hg(100%);
+            .f-s(0.16rem);
+            .pd(bottom,0.2rem);
+        }
+        
+        input::-webkit-input-placeholder{
+            .f-s(0.16rem);
+            .c(RGBA(205, 205, 211, 1));
+        }
+        
+        select{
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+        }
+        
+        //验证码
+        .ipt-code{
+            .wh(auto);
+            .hg(auto);
+            .f-s(0.16rem);
+            .p-abs;
+            right: 0;
+            top:0.36rem;
+            z-index: 999;
+            .c-cyan            
+        }
+    }
+}
+//长条按钮
+.qcyd-btn{
+    .bg-c(#43CEA9);
+    .c(#fff);
+    .dsp();
+    .tc;
+    .hg(0.45rem);
+    .l-hg(0.45rem);
+    .wh(100%);
+    .f-s(0.18rem);
+}
+
+//引导页
+.guide-cont{
+    bottom: 0.8rem;
+}
+.guide-foot{
+    .hg(0.8rem);
+    .pd(0);
+}
+.guide-tit{
+    .f-w(700);
+    .c(#323232);
+    .abs(0.32rem);
+    .tc;
+    .mg(0.6rem 0 0.6rem);
+}
+.guide-tab{
+    .hg(100%);
+    .wh(100%);
+    .ovr();
+    .pd(0.18rem 0.18rem);
+    a{
+        .dsp();
+        .br(1px solid #D8D8D8);
+        .wh(45%);
+        .hg(100%);
+        .l-hg(0.44rem);
+        .tc;
+        .f-s(0.18rem);
+        .c(#9B9B9B);
+    }
+    
+    .guide-tab-prev{
+        .mg(right,10%)
+    }
+    
+    .guide-tab-next{
+        .br(1px solid #43CEA9);
+        .c(#43CEA9);
+    }
+}
+
+.guide-sex{
+    .wh(auto);
+    .dsp(table);
+    .pd(bottom,0.95rem);
+    .mg(0 auto);
+    .ovr();
+    .sex-div{
+        .dsp(table-cell);
+        .tc;
+        .wh(auto);
+        .hg(auto);
+        img{
+            .wh(1rem);
+            .hg(1rem);
+            .br-rs(50%);
+            .bg-c(#F0F0F0)
+        }
+        .sex-txt{
+            .abs(0.14rem);
+            .c(#1A1A1A);
+            .mg(top,0.28rem);
+        }
+    }
+}
+.sex-div-show-one{
+    .mg(right,0.55rem)
+}
+.sex-div-show-two{
+    .mg(left,0.55rem)
+}
+
+.guide-bar{
+    .ovr();
+    .mg(bottom,0.7rem);
+    .guide-bar-bi{
+        .wh(100%);
+        .hg(1px);
+        .bg(rgba(0,0,0,.12));
+        .mg(top,0.22rem);
+    }
+    .p-rel;
+    .guide-bar-top{
+        .f-s(0.16rem);
+        .l-hg(0.16rem);
+         min-height: 0.16rem;
+        .guide-bar-txt{
+            .c(#1A1A1A);
+            .fl;
+        }
+        .guide-bar-num{
+            .c(#43CEA9);
+            .f-w(700);
+            .fr
+        }
+    }
+    .ipt{
+        .br(none);
+        .bg(none);
+        .p-abs;
+        .wh(100%);
+        .hg(100%);
+        .pd(0)!important;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        z-index: 99;
+    }
+}
+//尺标
+.ruler-mode{
+    .hg(0.18rem);
+    .wh(100%);
+    .p-rel;
+    .mg(top,0.44rem);
+    .ruler-drop{
+        .hg(0.32rem);
+        .wh(1px);
+        .p-abs;
+        .bg-c(#43CEA9);
+        left: 50%;
+        .mg(left,0.5px);
+        top: -0.14rem;
+    }
+    .ruler-cont{
+        .wh(100%);
+        .hg(100%);
+        .ovr();
+        .p-rel;
+        .ruler-scroll{
+            .hg(100%);
+        }
+        .ruler-div{
+            .wh(3000px);
+            .hg(0.18rem);
+            .bg(url(../img/range-line.png) repeat-x left top / auto 100%);
+        }
+    }
+}
+.guide-bar-hide{
+    opacity: 0;
+    .mg(bottom,1.2rem);
+}
+.guide-bar-show{
+    opacity: 1;
+    .mg(bottom,0.7rem);
+}
+
+.op-hide{
+    opacity: 0;
+}
+.op-show{
+    opacity: 1;
+}
+
+//公用按钮
+.qc-btn{
+    .wh(auto);
+    .pd(0.2rem 0.4rem);
+    .br(1px solid rgba(0,0,0,.12));
+    .br-rs(0.4rem);
+    .c(#545556);
+    .f-s(0.16rem);
+    .tc;
+}
+.qc-btn-c{
+    .bg-c(#43CEA9);
+    .br(none);
+    .c(#fff);
+}
+.qc-btn-in{
+    .pd(0);
+    .hg(0.52rem);
+    .l-hg(0.52rem);
+    .mg(0 auto 0.12rem);
+    .wh(2.4rem);
+    .f-w(700);
+    em{
+        .f-s(0.16rem);
+        .dsp()   
+    }
+    span{
+        .f-s(0.12rem);
+        .mg(left,0.04rem)
+    }
+}
+.qc-btn-in2{
+    em{
+        .mg(0);
+        .hg(100%);
+        .l-hg(0.96rem);
+    }
+}
+.qc-btn-hide{
+    opacity: 0;
+    .mg(0 auto 0.5rem);
+}
+.qc-btn-show{
+    opacity: 1;
+    .mg(0 auto 0.12rem);
+}
+.qc-btn-hide2{
+    .wh(0);
+    .hg(0);
+    .pd(0);
+    opacity: 0;
+}
+.qc-btn-show2{
+    .wh(auto);
+    .hg(auto);
+    .pd(0.22rem 0.40rem);
+     opacity: 1;
+}
+
+//兴趣选择
+.guide-tabs{
+    .dsp(table);
+    .tc;
+    .ovr();
+    .wh(auto);
+    .mg(0 auto);
+    .qc-btn{
+        .dsp(table-cell);
+        .wh(1.2rem);
+        .fl;
+        .mg(0 0.1rem 0.1rem);
+    }
+    .qc-btn-c{
+        .hg(0.62rem)
+    }
+}
+.guide-tabs-hide{
+    .p-abs;
+    left: 1000px;
+}
+.guide-tabs-show{
+    .p-rel;
+    left: 0;
+}
+.guide-tit-hide{
+    opacity: 0;
+}
+.guide-tit-show{
+    opacity: 1;
+}
+
+//个人资料
+.user-data-li{
+    .hg(0.5rem);
+    .l-hg(0.5rem);
+    .f-s(0.14rem);
+    .c(#1a1a1a);
+    .br(bottom,1px solid #F2F2F2);
+    .p-rel;
+    .user-data-ipt{
+        .p-abs;
+        .wh(100%);
+        .hg(100%);
+        left: 0;
+        right: 0;
+        text-align: right;
+        direction:rtl;
+        .br(none);
+        z-index: 99;
+    }
+}

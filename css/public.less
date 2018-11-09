@@ -150,7 +150,7 @@
 }
 
 //绝对高度
-.abs(@px:0.12rem){
+.abs(@px:0.14rem){
     .hg(@px);
     .l-hg(@px);
     .f-s(@px);
@@ -232,6 +232,23 @@
 .anime-ease-3{
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
+}
+
+//输入框默认样式清除
+.clean-form{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+/*
+ * @alias 阴影
+ * @description 值：水平，垂直，模糊距离，阴影尺寸，阴影颜色
+ * @example 水平为负数，阴影就在左边，垂直为负数，阴影就在上面
+ */
+.shadow(@x:0,@y:10px,@blur:20px,@spread:0,@color:rgba(0,0,0,.5)){
+    -webkit-box-shadow:@x @y @blur @spread @color;
+            box-shadow:@x @y @blur @spread @color;
 }
 
 /*
@@ -324,6 +341,9 @@
 }
 .c-28{
     .c(#282828)!important
+}
+.c-f7{
+    .c(#F7CD5C)!important
 }
 
 /*
@@ -502,6 +522,12 @@
 /*
  * 图文列表间距    margin
  */
+.mg-lf-20{
+    .mg(left,0.2rem)!important
+}
+.mg-rg-20{
+    .mg(right,0.2rem)!important
+}
 .mg-lf-15{
     .mg(left,0.15rem)!important
 }
@@ -552,10 +578,27 @@
 /*
  * background
  */
+.bg-cyan{
+    .bg-c(#43CEA9)!important
+}
 .bg-f{
     .bg-c(#fff)!important
 }
-
+.bg-86{
+    .bg-c(RGBA(134, 134, 134, 0.09))!important
+}
+.bg-f6{
+    .bg-c(RGBA(246, 246, 246, 1))!important
+}
+.bg-f3{
+    .bg-c(RGBA(243, 243, 243, 1))!important
+}
+.bg-f2{
+    .bg-c(RGBA(242, 242, 242, 1))!important
+}
+.bg-f4{
+    .bg-c(RGBA(255, 68, 68, 1))!important
+}
 
 /*
  * button
@@ -564,7 +607,7 @@
     .c(#fff);
     .tc;
     .f-s(0.12rem);
-    .bg-c(#43CEA9)!important
+    .bg-c(#43CEA9)!important;
 }
 .btn-gray{
     .br(1px solid #9B9B9B);
@@ -619,11 +662,14 @@
 /*
  * font weight
  */
+.f-w-500{
+    .f-w(500)
+}
 .f-w-bold{
-    .f-w(bold)
+    .f-w()
 }
 .f-w-normal{
-    .f-w(normal)
+    .f-w(normal)!important
 }
 
 /*
@@ -665,6 +711,9 @@
 .hg-30{
    .hg(0.3rem)!important 
 }
+.hg-40{
+   .hg(0.4rem)!important 
+}
 
 /*
  * line-height
@@ -705,6 +754,9 @@
 .l-hg-30{
    .l-hg(0.3rem)!important 
 }
+.l-hg-40{
+   .l-hg(0.4rem)!important 
+}
 
 /*
  * display
@@ -714,6 +766,9 @@
 }
 .d-i-block{
     .dsp(inline-block)!important;
+}
+.d-flex{
+    .dsp(flex)!important;
 }
 
 //close button
@@ -746,16 +801,16 @@
 }
 
 //border
-.db-br{
+.br-db{
     .br(top,1px solid #ccc);
     .br(bottom,1px solid #ccc);
 }
-.btm-br{
+.br-btm{
     .br(bottom,1px solid #ccc);
 }
-.top-br{
+.br-top{
     .br(top,1px solid #ccc);
 }
-.not-br{
+.br-not{
     .br(none)!important;
 }

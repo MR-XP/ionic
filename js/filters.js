@@ -39,6 +39,9 @@ app.filter('cut', [function () {
 
 	   max = parseInt(max, 10);
 	   
+	   if(typeof value == 'number'){
+	   		value = value.toString();
+	   }
 	   if (value.length <= max) return value;
 	   if (!max) return value;
 		

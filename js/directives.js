@@ -9,7 +9,7 @@ app.directive('imgzoom', ['$timeout','$ionicLoading',function($timeout,$ionicLoa
 		link: function($scope, element, attr, controller) {
 			
 			//标签例子
-			//<img imgzoom ng-repeat="i in data.images" ng-src="uploads/{{i}}" clsname="imgs" zoomurl="uploads/{{i}}" />
+			//<img imgzoom ng-repeat="i in data.images" ng-src="{{i}}" clsname="imgs" zoomurl="{{i}}" />
 			
 			var srcList = [],
 				imgs	= [];
@@ -88,8 +88,10 @@ app.directive('dateMenu', ["$compile","$filter", "formatDate", function($compile
 			element.replaceWith($compile(element[0].outerHTML)(scope));		//用粗文本替换
 			
 			//默认加载第一个
-			var t = formatDate.get(cd);		
-			scope.$eval(attr.click+'(\''+attr.divname+'\',\''+attr.stripname+'\',\''+ t.y + "-" + $filter('zeroFill')(t.m) + "-" + $filter('zeroFill')(t.d)+'\','+0+','+attr.cbfn+','+attr.handle+')');
+			var t = formatDate.get(cd);
+			scope.load(function(){
+				scope.$eval(attr.click+'(\''+attr.divname+'\',\''+attr.stripname+'\',\''+ t.y + "-" + $filter('zeroFill')(t.m) + "-" + $filter('zeroFill')(t.d)+'\','+0+','+attr.cbfn+','+attr.handle+')');				
+			})
 						
 		}
 	}

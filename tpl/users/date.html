@@ -1,0 +1,28 @@
+<ion-view class="hx-page bg-f" id="user-user-sign" hide-nav-bar="true" ng-init="setDocumentTitle('日期')" ng-controller="SignRecordCtrl">
+
+	<ion-content overflow-scroll="false" scrollbar-y="false" has-bouncing="true">
+		
+		<div class="sign-record">
+			<div id="calendar">
+				<div class="title">
+					<div class="ck-div ck-lf" ng-click="prev()">
+						<div class="prev"></div>
+					</div>
+					<div class="ck-div ck-rg" ng-click="next()">
+						<div class="next"></div>
+					</div>
+					<div class="month-span"></div>
+				</div>				
+				<div class="o-hd" style="padding: 0 0.3rem;">
+					<div class="f-s-14 hg-14 l-hg-14 f-w-bold c-f mg-btm-12">累计{{total}}天</div>
+					<div id="signLayer"></div>
+				</div>
+			</div>
+		</div>
+  </ion-content>
+  
+</ion-view>
+
+
+
+

@@ -1,0 +1,35 @@
+<!--引导页1-->
+<ion-view ng-init="setDocumentTitle('基本资料');pageName='guide-one'" hide-nav-bar="true">
+	
+	<ion-content class="guide-cont hx-pd" overflow-scroll="false" scrollbar-y="false" has-bouncing="true">
+
+		<div class="hg-40 l-hg-40 mg-btm-12 mg-top-20">
+		 	<a href="javascript:;" class="fr f-s-12 c-54 hg-40 tc" style="width: 0.4rem;background-color: #F6F6F6;border-radius: 50%;">跳过</a>
+		</div>
+	 	<div class="user-data-li" style="margin-bottom: 0.65rem;">
+			<div class="fl">姓名</div>
+			<input class="user-data-ipt" ng-model="data.name" type="text" />
+		</div>
+		<div class="f-s-16 hg-16 l-hg-16 c-1a mg-btm-30">选择姓别</div>
+		<div class="guide-sex guide-one">
+		 	<div class="sex-div fl anime-ease-3 guide-one" ng-click="data.sex = 1" clsname="sex-div-show-one" time="100">
+				<img ng-if="data.sex == 2" ng-src="{{app.TEMPLATE_HOST}}/img/head-man-gray.png" alt="" />
+		 		<img ng-if="data.sex == 1" ng-src="{{app.TEMPLATE_HOST}}/img/head-man-color.png" alt="" />
+		 		<div class="sex-txt" ng-class="{'c-cyan':data.sex == 1}">帅哥</div>
+		 	</div>
+		 	<div class="sex-div fr anime-ease-3 guide-one" ng-click="data.sex = 2" clsname="sex-div-show-two" time="100">
+		 		<img ng-if="data.sex == 1" ng-src="{{app.TEMPLATE_HOST}}/img/head-woman-gray.png" alt="" />
+		 		<img ng-if="data.sex == 2" ng-src="{{app.TEMPLATE_HOST}}/img/head-woman-color.png" alt="" />
+		 		<div class="sex-txt" ng-class="{'c-cyan':data.sex == 2}">美女</div>
+		 	</div>
+		</div>
+		 
+	</ion-content>
+	
+	<ion-footer-bar class="guide-foot">
+		<div class="guide-tab">
+			<a class="guide-tab-next" style="margin: 0 auto;" href="javascript:;" ng-click="location('guide/guide-two');keep()">下一步</a>
+		</div>
+	</ion-footer-bar>
+
+</ion-view>

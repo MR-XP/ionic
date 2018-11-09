@@ -4,14 +4,21 @@
 		
     </ion-header-bar>
 
-    <ion-content class="hx-cont" overflow-scroll="false" scrollbar-y="false" has-bouncing="true">
-		
+    <ion-content class="hx-cont" delegate-handle="contMode" overflow-scroll="false" scrollbar-y="false" has-bouncing="true">
+		<div class="bg-f pd-top-30 mg-btm-10 p-rel o-hd">
+			<div class="mg-btm-20 hx-pd p-rel tab-nav">
+				<div class="tab-nav-li" name="tab-nav-li" ng-click="toggleActive(0,'tab-nav-li')" ng-class="{'tab-nav-li-choose':active==0}">列表一</div>
+				<div class="tab-nav-li" name="tab-nav-li" ng-click="toggleActive(1,'tab-nav-li')" ng-class="{'tab-nav-li-choose':active==1}">列表二</div>
+				<div class="p-abs anime-ease-6 tab-nav-look" style="width: 0.6rem;"></div>
+			</div>
+			<date-menu click="clickDateMenu" handle="contMode" divname="date" stripname="date-menu-active" cbfn="getTime"></date-menu>
+		</div>
+		<div ng-if="!list || list.length == 0" class="tc c-9b f-s-12 hg-12 l-hg-12 mg-top-10">暂无数据哟</div>
     </ion-content>
 
-    <ion-footer-bar class="hx-foot" align-title="left">
-		
-    </ion-footer-bar>
-
+	<ion-footer-bar class="hx-foot">
+		<foot-nav click="footNavMenu"></foot-nav>
+	</ion-footer-bar>
 
 </ion-view>
 

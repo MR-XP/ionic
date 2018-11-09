@@ -163,7 +163,7 @@ function JPEGEncoder(a){function I(a){var c,i,j,k,l,m,n,o,p,b=[16,11,10,16,24,40
                  * 生成base64
                  * 兼容修复移动设备需要引入mobileBUGFix.js
                  */
-                var base64 = canvas.toDataURL('image/jpeg', settings.quality);
+                var base64 = canvas.toDataURL('image/png', settings.quality);
                 // 修复IOS
                 if (navigator.userAgent.match(/iphone/i)) {
                     var mpImg = new MegaPixImage(base64);
@@ -172,10 +172,11 @@ function JPEGEncoder(a){function I(a){var c,i,j,k,l,m,n,o,p,b=[16,11,10,16,24,40
                         maxHeight: h,
                         quality: settings.quality
                     });
-                    base64 = canvas.toDataURL('image/jpeg', settings.quality);
+                    base64 = canvas.toDataURL('image/png', settings.quality);
                 }else if(navigator.userAgent.match(/Android/i)){
                     // 修复Android
-                    var encoder = new JPEGEncoder();
+                    /*var encoder = new JPEGEncoder();*/
+                    var encoder = new PNGEncoder();
                     base64 = encoder.encode(ctx.getImageData(0, 0, w, h), settings.quality * 100);
                 }
 
