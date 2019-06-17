@@ -1,4 +1,9 @@
-﻿@charset "utf-8";
+@charset "utf-8";
+
+/*
+ *	@author: XP
+ *	@description:请尽量不要修改项目公用的样式，可以复制出去用，适用于移动端，亲~
+ */
 
 //外边距
 .mg(top,@px){
@@ -297,6 +302,9 @@
 .c-cyan{
     .c(#43CEA9)!important
 }
+.c-blue{
+    .c(#00A0F5)!important
+}
 //一级标题
 .c-0{
     .c(#000)!important
@@ -326,6 +334,9 @@
 }
 .c-43{
     .c(#43CEA9)!important
+}
+.c-3{
+    .c(#333333)!important
 }
 .c-30{
     .c(#303030)!important
@@ -380,6 +391,9 @@
 .f-s-20{
     .f-s(0.2rem)!important
 }
+.f-s-22{
+    .f-s(0.22rem)!important
+}
 .f-s-24{
     .f-s(0.24rem)!important
 }
@@ -389,10 +403,25 @@
 .f-s-40{
     .f-s(0.4rem)!important
 }
+.f-s-50{
+    .f-s(0.5rem)!important
+}
 
 /*
  * margin
  */
+.mg-top-60{
+    .mg(top,0.6rem)!important
+}
+.mg-btm-60{
+    .mg(bottom,0.6rem)!important
+}
+.mg-top-40{
+    .mg(top,0.4rem)!important
+}
+.mg-btm-40{
+    .mg(bottom,0.4rem)!important
+}
 .mg-top-30{
     .mg(top,0.3rem)!important
 }
@@ -429,6 +458,12 @@
 .mg-btm-16{
     .mg(bottom,0.16rem)!important
 }
+.mg-top-14{
+    .mg(top,0.14rem)!important
+}
+.mg-btm-14{
+    .mg(bottom,0.14rem)!important
+}
 .mg-top-12{
     .mg(top,0.12rem)!important
 }
@@ -453,11 +488,26 @@
 .mg-btm-5{
     .mg(bottom,0.05rem)!important
 }
+.mg-0{
+    .mg(0)!important
+}
 
 /*
  * padding
  */
 //标题间距
+.pd-top-60{
+    .pd(top,0.6rem)!important
+}
+.pd-btm-60{
+    .pd(bottom,0.6rem)!important
+}
+.pd-top-40{
+    .pd(top,0.4rem)!important
+}
+.pd-btm-40{
+    .pd(bottom,0.4rem)!important
+}
 .pd-top-30{
     .pd(top,0.3rem)!important
 }
@@ -494,6 +544,12 @@
 .pd-btm-16{
     .pd(bottom,0.16rem)!important
 }
+.pd-top-14{
+    .pd(top,0.14rem)!important
+}
+.pd-btm-14{
+    .pd(bottom,0.14rem)!important
+}
 .pd-top-12{
     .pd(top,0.12rem)!important
 }
@@ -517,6 +573,9 @@
 }
 .pd-btm-5{
     .pd(bottom,0.05rem)!important
+}
+.pd-0{
+    .pd(0)!important
 }
 
 /*
@@ -545,6 +604,12 @@
 }
 .mg-rg-10{
     .mg(right,0.1rem)!important
+}
+.mg-lf-5{
+    .mg(left,0.05rem)!important
+}
+.mg-rg-5{
+    .mg(right,0.05rem)!important
 }
 
 /*
@@ -581,11 +646,29 @@
 .bg-cyan{
     .bg-c(#43CEA9)!important
 }
+.bg-blue{
+    .bg-c(#00A0F5)!important
+}
+.bg-green{
+    .bg-c(#43CEA9)!important
+}
+.bg-yellow{
+    .bg-c(#F4D000)!important
+}
 .bg-f{
     .bg-c(#fff)!important
 }
+.bg-none{
+    .bg(0)!important
+}
+.bg-f9{
+    .bg-c(#F9A734)!important
+}
 .bg-86{
     .bg-c(RGBA(134, 134, 134, 0.09))!important
+}
+.bg-f8{
+    .bg-c(RGBA(248, 248, 248, 1))!important
 }
 .bg-f6{
     .bg-c(RGBA(246, 246, 246, 1))!important
@@ -599,6 +682,12 @@
 .bg-f4{
     .bg-c(RGBA(255, 68, 68, 1))!important
 }
+.bg-none{
+    .bg(0)!important
+}
+.bg-f9{
+    .bg-c(#F9A734)!important
+}
 
 /*
  * button
@@ -608,6 +697,12 @@
     .tc;
     .f-s(0.12rem);
     .bg-c(#43CEA9)!important;
+}
+.btn-blue{
+    .c(#fff);
+    .tc;
+    .f-s(0.12rem);
+    .bg-c(#00A0F5)!important;
 }
 .btn-gray{
     .br(1px solid #9B9B9B);
@@ -619,6 +714,13 @@
     .br(1px solid RGBA(67, 206, 169, 0.5));
     .bg-c(RGBA(70, 207, 171, 0.09));
     .c(RGBA(67, 206, 169, 1));
+    .tc;
+    .f-s(0.12rem);
+}
+.btn-bgBlue{
+    .br(1px solid RGBA(0, 160, 245, 1));
+    .bg-c(RGBA(0, 160, 245, 0.06));
+    .c(RGBA(0, 160, 245, 1));
     .tc;
     .f-s(0.12rem);
 }
@@ -666,7 +768,7 @@
     .f-w(500)
 }
 .f-w-bold{
-    .f-w()
+    .f-w(bold)
 }
 .f-w-normal{
     .f-w(normal)!important
@@ -708,11 +810,17 @@
 .hg-24{
    .hg(0.24rem)!important 
 }
+.hg-28{
+   .hg(0.28rem)!important 
+}
 .hg-30{
    .hg(0.3rem)!important 
 }
 .hg-40{
    .hg(0.4rem)!important 
+}
+.hg-50{
+   .hg(0.5rem)!important 
 }
 
 /*
@@ -751,11 +859,17 @@
 .l-hg-24{
    .l-hg(0.24rem)!important 
 }
+.l-hg-28{
+   .l-hg(0.28rem)!important 
+}
 .l-hg-30{
    .l-hg(0.3rem)!important 
 }
 .l-hg-40{
    .l-hg(0.4rem)!important 
+}
+.l-hg-50{
+   .l-hg(0.5rem)!important 
 }
 
 /*
