@@ -1,66 +1,106 @@
-* {
-	-webkit-transform: all 1s;
-	-ms-transform: all 1s;
-	-o-transform: all 1s;
-	transform: all 1s;
-
-	/*animation-name: colorchange; /**这里引用了前面定义的动画**/
-	-webkit-animation-duration: 3s;
-	-o-animation-duration: 3s;
-	animation-duration: 3s;
-	-webkit-animation-timing-function: ease-in;
-	-o-animation-timing-function: ease-in;
-	animation-timing-function: ease-in;
-	-webkit-animation-delay: 0s;
-	-o-animation-delay: 0s;
-	animation-delay: 0s;
-	-webkit-animation-iteration-count: infinite;
-	-o-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-	-webkit-animation-direction: normal;
-	-o-animation-direction: normal;
-	animation-direction: normal;/* normal：默认，从0%执行到100% | reverse：动画从100%执行到0% | alternate：动画在0%到100%之间往复执行|alternate-reverse与alternate一致，不过是从100%开始 */
-	-webkit-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
-	animation-fill-mode: both;
-	
-
-
-}
+/*
+演示用的DIV
+ */
 div {
-	display: inline-block;
-	background-color: red;
-	margin: 30px;
+    display: inline-block;
+    background-color: red;
+    margin: 30px;
 }
-
 .rect {
-	width: 30px;
-	height: 70px;
-	-webkit-transform-origin: center bottom;
-	-moz-transform-origin: center bottom;
-	-ms-transform-origin: center bottom;
-	-o-transform-origin: center bottom;
-	transform-origin: center bottom;
+    width: 30px;
+    height: 70px;
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    -o-transform-origin: center bottom;
+    transform-origin: center bottom;
 }
 .rect-h {
-	width: 70px;
-	height: 30px;
+    width: 70px;
+    height: 30px;
 }
 .multi:hover{
-	width: 30px;
-	height: 70px;
-	background-color: blue;
-	-webkit-transition: width 1s,height 2s,background-color 3s;
-	-o-transition: width 1s,height 2s,background-color 3s;
-	transition: width 1s,height 2s,background-color 3s;
+    width: 30px;
+    height: 70px;
+    background-color: blue;
+    -webkit-transition: width 1s,height 2s,background-color 3s;
+    -o-transition: width 1s,height 2s,background-color 3s;
+    transition: width 1s,height 2s,background-color 3s;
 }
 .circle {
-	border: 3px dotted white;
-	border-radius: 500px;
-	width: 70px;
-	height: 70px;
+    border: 3px dotted white;
+    border-radius: 500px;
+    width: 70px;
+    height: 70px;
 }
 
+
+
+* {
+    /**
+     * @description - 规定动画在播放之前或之后，其动画效果是否可见
+     * @value none - 不改变默认行为
+     * @value forwards - 当动画完成后，保持最后一个属性值
+     * @value backwards - 在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值
+     * @value both - 向前和向后填充模式都被应用
+     */
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    animation-fill-mode:both;
+
+    /**
+     * @description - 规定动画的速度曲线
+     * @value linear - 动画从头到尾的速度是相同的
+     * @value ease - 默认。动画以低速开始，然后加快，在结束前变慢
+     * @value ease-in - 动画以低速开始
+     * @value ease-out - 动画以低速结束
+     * @value ease-in-out - 动画以低速开始和结束
+     * @value cubic-bezier(n,n,n,n) - 自定义速度
+     */
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -ms-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+
+    /*规定何时开始*/
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+
+    /*规定完成动画所花费的时间。默认值是 0，意味着没有动画效果。*/
+    -webkit-animation-duration:3s;
+    -moz-animation-duration:3s;
+    -ms-animation-duration:3s;
+    -o-animation-duration:3s;
+    animation-duration:3s;
+
+    /**
+     * @description - 规定动画的播放次数，默认1次
+     * @value infinite - 规定动画无限次播放
+     */
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+
+    /**
+     * @description - 规定动画的播放方向
+     * @value normal - 默认，从0%执行到100%
+     * @value reverse - 动画从100%执行到0%
+     * @value alternate - 动画在0%到100%之间往复执行
+     * @value alternate-reverse - 与alternate一致，不过是从100%开始
+     */
+    -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
+    -o-animation-direction: normal;
+    animation-direction: normal;
+
+}
 
 /* 动画效果 */
 @-webkit-keyframes colorchange {
@@ -77,11 +117,9 @@ div {
     75%  { background-color: #F0F; /* purple     */ }
     100% { background-color: #00F; /* to: blue   */ }
 }
-
 .colorchange {
-	-webkit-animation: colorchange 5s ease-in 0 infinite;
-	-o-animation: colorchange 5s ease-in 0 infinite;
-	animation: colorchange 5s ease-in 0 infinite;
+    -webkit-animation-name: colorchange;
+    animation-name: colorchange;
 }
 
 @-webkit-keyframes swing{
@@ -111,17 +149,14 @@ div {
 	100%{transform:rotate(-1deg);-webkit-transform:rotate(-1deg);}
 }
 .swing {
-	-webkit-animation: swing 1.5s ease-in 0 infinite;
-	-o-animation: swing 1.5s ease-in 0 infinite;
-	animation: swing 1.5s ease-in 0 infinite;
+    -webkit-animation-name: swing;
+    animation-name: swing;
 }
-
 .swing.reverse {
 	-webkit-animation-direction: reverse;
 	-o-animation-direction: reverse;
 	animation-direction: reverse;
 }
-
 .swing.alternate {
 	-webkit-animation-direction: alternate-reverse;
 	-o-animation-direction: alternate-reverse;
@@ -147,11 +182,9 @@ div {
         -webkit-transform: rotate(360deg)
     }
 }
-
 .rotate {
-	-webkit-animation: rotate 2s ease-in 0 infinite;
-	-o-animation: rotate 2s ease-in 0 infinite;
-	animation: rotate 2s ease-in 0 infinite;
+    -webkit-animation-name: rotate;
+    animation-name: rotate;
 }
 
 @-webkit-keyframes up-fade {
@@ -178,9 +211,8 @@ div {
     }
 }
 .up-fade {
-	-webkit-animation: up-fade 2s ease-in 0 infinite;
-	-o-animation: up-fade 2s ease-in 0 infinite;
-	animation: up-fade 2s ease-in 0 infinite;
+    -webkit-animation-name: up-fade;
+    animation-name: up-fade;
 }
 
 @-webkit-keyframes rubberBand {
@@ -257,9 +289,8 @@ div {
 }
 
 .rubberBand {
-	-webkit-animation: rubberBand 2s ease-in 0 infinite;
-	-o-animation: rubberBand 2s ease-in 0 infinite;
-	animation: rubberBand 2s ease-in 0 infinite;
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
 }
 
 
@@ -286,9 +317,8 @@ div {
     }
 }
 .movex {
-	-webkit-animation: movex 3s linear 0 infinite;
-	-o-animation: movex 3s linear 0 infinite;
-	animation: movex 3s linear 0 infinite;
+    -webkit-animation-name: movex;
+    animation-name: movex;
 }
 
 
@@ -309,9 +339,8 @@ div {
     }
 }
 .mask {
-	-webkit-animation: mask 2s linear 0 infinite;
-	-o-animation: mask 2s linear 0 infinite;
-	animation: mask 2s linear 0 infinite;
+    -webkit-animation-name: mask;
+    animation-name: mask;
 }
 @-webkit-keyframes zoomInDown {
     0% {
@@ -349,9 +378,8 @@ div {
 }
 
 .zoomInDown {
-	-webkit-animation: zoomInDown 3s linear 0 infinite;
-	-o-animation: zoomInDown 3s linear 0 infinite;
-	animation: zoomInDown 3s linear 0 infinite;
+    -webkit-animation-name: zoomInDown;
+    animation-name: zoomInDown;
 }
 
 @-webkit-keyframes spin {
@@ -360,7 +388,6 @@ div {
         -ms-transform: rotate(0);
         -o-transform: rotate(0);
         transform: rotate(0);
-        rotate: 0;
     }
     100% {
         -webkit-transform: rotate(360deg);
@@ -371,17 +398,22 @@ div {
 }
 @keyframes spin {
     0% {
-        rotate: 0;
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
     }
     100% {
-        rotate: 360deg;
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 .spin {
-	-webkit-animation: spin 3.5s linear 0 infinite;
-	-o-animation: spin 3.5s linear 0 infinite;
-	animation: spin 3.5s linear 0 infinite;
+    -webkit-animation-name: spin;
+    animation-name: spin;
 }
 
 @-webkit-keyframes bounce {
@@ -440,9 +472,8 @@ div {
   }
 }
 .bounce {
-	-webkit-animation: bounce 1.2s ease-in infinite;
-	-o-animation: bounce 1.2s ease-in infinite;
-	animation: bounce 1.2s ease-in infinite;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
 }
 
 @-webkit-keyframes flash {
