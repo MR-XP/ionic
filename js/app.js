@@ -26,7 +26,7 @@ angular.module('App', ["ionic", "ngAnimate", "App.ctrls", "oc.lazyLoad", "App.fi
         $ionicConfigProvider.platform.android.tabs.style('standard');
         $ionicConfigProvider.platform.android.tabs.position('bottom');
 		
-		$urlRouterProvider.when('', '/users/index');
+		$urlRouterProvider.when('', '/guide/guide-one');
 		$urlRouterProvider.when('/users', '/users/index');
 		$urlRouterProvider.when('/guide', '/guide/guide-one');
 		
